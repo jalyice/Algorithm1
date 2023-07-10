@@ -11,15 +11,13 @@ public class Main{
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        double a = Double.parseDouble(st.nextToken());
-        double b = Double.parseDouble(st.nextToken());
-        double c = Double.parseDouble(st.nextToken());
-        double d = Double.parseDouble(st.nextToken());
-        double e = Double.parseDouble(st.nextToken());
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+        int c = Integer.parseInt(st.nextToken());
+        int d = Integer.parseInt(st.nextToken());
+        int e = Integer.parseInt(st.nextToken());
 
-        double ppow = (Math.pow(a,2)+Math.pow(b,2)+Math.pow(c,2)+Math.pow(d,2)+Math.pow(e,2))%10;
-        int asr =(int)Math.round(ppow); 
-        int answer = Integer.valueOf(asr);
+        int answer = (a*a+b*b+c*c+d*d+e*e)%10;
         bw.write(answer+"\n");
         bw.close();
         

@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 
@@ -8,10 +10,10 @@ import java.util.StringTokenizer;
 public class Main{
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int[][] dp = new int[30][30];
  
-		// 2번 성질 (n == r, r == 0)
+		// nCr (n == r, r == 0)
 		for (int i = 0; i < 30; i++) {
 			dp[i][i] = 1;
 			dp[i][0] = 1;
@@ -20,7 +22,7 @@ public class Main{
  
 		for (int i = 2; i < 30; i++) {
 			for (int j = 1; j < 30; j++) {
-				// 1번 성질 
+				// nCr = n-1Cr-1 + n-1Cr
 				dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
 			}
 		}
@@ -28,7 +30,6 @@ public class Main{
 		int T = Integer.parseInt(br.readLine());
 		
 		StringTokenizer st;
-		StringBuilder sb = new StringBuilder();
         
 		for(int i = 0; i < T; i++) {
 			
@@ -37,10 +38,11 @@ public class Main{
 			// M개중 N개를 뽑는 경우이므로 nCr 에서 n = M, r = N이다.
 			int N = Integer.parseInt(st.nextToken());	// N = r
 			int M = Integer.parseInt(st.nextToken());	// M = n
-					
-			sb.append(dp[M][N]).append('\n');
+			
+          	        bw.write(dp[M][N]+"\n");
+			
 		}
+		bw.close();
 		
-		System.out.println(sb);
     }   
 }

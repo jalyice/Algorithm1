@@ -1,0 +1,15 @@
+//병합정렬
+MergeSort(A[], p, r) // A[p ''' r] 을 정렬한다.
+{
+    if(p < r ) then {
+        q <- [(p+2)/2]; //p,r의 중간지점 계산 
+        mergeSort(A, p, q);  //전반부 정렬
+        mergeSort(A, q+1, r); //후반부 정렬
+        merge(A, p, q, r); //병합
+    }
+}
+merge(A[], p, q, r)
+{
+    정렬되어있는 두 배열 A[p'''q]와 A[q+1'''r]을 합쳐
+    정렬된 하나의 배열 A[p'''r]을 만든다.
+}

@@ -13,12 +13,12 @@ public class Main {
             int N = Integer.parseInt(st.nextToken());
             int M = Integer.parseInt(st.nextToken());
             Queue<Integer> q = new LinkedList<>();
-            LinkedList<Integer> list = new LinkedList<>();
+            Queue<Integer> idxq = new LinkedList<>();
             
             st =new StringTokenizer(br.readLine());
             for(int j=0; j<N; j++){
                 q.offer(Integer.parseInt(st.nextToken()));
-                list.offer(j);
+                idxq.offer(j);
                 
             }
             int cnt = 1;
@@ -26,7 +26,7 @@ public class Main {
             while(!q.isEmpty()){
                 int max = Collections.max(q);
                 int cur = q.poll();
-                int idx = list.poll();
+                int idx = idxq.poll();
                 
                 if(cur == max){
                     if(idx == M){
@@ -37,7 +37,7 @@ public class Main {
                 }
                 else{
                     q.offer(cur);
-                    list.offer(idx);
+                    idxq.offer(idx);
                 }
             }
            

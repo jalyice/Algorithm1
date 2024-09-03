@@ -18,24 +18,22 @@ public class Main {
                     stack[idx++] = num;
 		        	break;
         		case 2:		
-                    if(idx == 0) bw.write(-1+"\n");//System.out.println(-1);
+                    if(idx == 0) bw.write(-1+"\n");
                     else {
                         bw.write(stack[idx-1]+"\n");
-                        //System.out.println(stack[idx-1]);    
                         stack[idx--] = 0;
                     }
 			        break; 
 		        case 3:
                     bw.write(idx+"\n");
-			        //System.out.println(idx);
 			        break;
                 case 4:
-                    if(idx==0) bw.write(1+"\n");//System.out.println(1);
-                    else bw.write(0+"\n");//System.out.println(0);
+                    if(idx==0) bw.write(1+"\n");
+                    else bw.write(0+"\n");
                     break;
                 case 5:
-                    if(idx==0) bw.write(-1+"\n");//System.out.println(-1);
-                    else bw.write(stack[idx-1]+"\n");//System.out.println(stack[idx-1]);
+                    if(idx==0) bw.write(-1+"\n");
+                    else bw.write(stack[idx-1]+"\n");
                     break;
 	        	default:
                     break;
@@ -43,8 +41,5 @@ public class Main {
             
         }
         bw.close();
-
-        
-       
     }
 }
